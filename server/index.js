@@ -8,6 +8,7 @@ const mc = require( __dirname + '/controllers/messages_controller');
 const app = express()
 
 app.use(bodyParser.json())
+app.use( express.static( __dirname + '/../public/build' ) );
 
 app.get('/api/messages', messages.read)
 app.post('/api/messages', messages.create)
